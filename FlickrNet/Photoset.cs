@@ -72,6 +72,11 @@ namespace FlickrNet
         public string CoverPhotoFarm { get; set; }
 
         /// <summary>
+        /// The number of photos and video in this photoset.
+        /// </summary>
+        public int TotalNumberOfPhotosAndVideos { get; set; }
+
+        /// <summary>
         /// The number of photos in this photoset.
         /// </summary>
         public int NumberOfPhotos { get; set; }
@@ -177,6 +182,8 @@ namespace FlickrNet
                     case "total":
                         break;
                     case "photos":
+                        TotalNumberOfPhotosAndVideos = reader.ReadContentAsInt();
+                        break;
                     case "count_photos":
                         NumberOfPhotos = reader.ReadContentAsInt();
                         break;
